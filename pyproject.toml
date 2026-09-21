@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-orm"
+version = "1.0.0"
+description = "ORM em Python puro sobre sqlite3: modelos declarativos, construtor de consulta, mapa de identidade e migrações."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "condeDeveloper" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Database",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["orm*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
